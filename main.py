@@ -1,4 +1,9 @@
 import scapy.all as sc
+import optparse as option
+
+parser = option.OptionParser()
+parser.add_option("-ip", "--IP", dest="ip")
+(IP) = parser.parse_args()
 
 
 def scann_ip(ip):
@@ -23,5 +28,5 @@ def print_result(result_list):
     return
 
 
-scan_result = scann_ip("192.168.1.11/24")
+scan_result = scann_ip(IP.ip)
 print_result(scan_result)
