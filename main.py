@@ -1,9 +1,13 @@
 import scapy.all as sc
-import optparse as option
+import argparse as option
 
-parser = option.OptionParser()
-parser.add_option("-ip", "--IP", dest="ip")
-(IP) = parser.parse_args()
+
+def get_arguments():
+    global IP
+    parser = option.ArgumentParser()
+    parser.add_argument("-t", "--target", dest="ip")
+    (IP) = parser.parse_args()
+    return IP
 
 
 def scann_ip(ip):
@@ -28,5 +32,6 @@ def print_result(result_list):
     return
 
 
-scan_result = scann_ip(IP.ip)
+target_ip = get_arguments()
+scan_result = scann_ip(target_ip.ip)
 print_result(scan_result)
