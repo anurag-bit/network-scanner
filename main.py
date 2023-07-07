@@ -34,7 +34,6 @@ def print_result(result_list):
     return
 
 
-
 target_ip = get_arguments()
 scan_result = scann_ip(target_ip.IP)
 print_result(scan_result)
