@@ -11,7 +11,7 @@ def get_arguments():
     parser = option.ArgumentParser()
     # parser argument
     parser.add_argument("-t", "--target", dest="IP")
-    (IP) = parser.parse_args()
+    IP = parser.parse_args()
     return IP
 
 
