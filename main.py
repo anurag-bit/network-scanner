@@ -1,6 +1,8 @@
 import scapy.all as sc
 import argparse as option
 
+IP = ''
+
 
 def get_arguments():
     # Define Variable consistency throughout scope!
@@ -8,7 +10,7 @@ def get_arguments():
     # Object Parser instance for Parsing arguments
     parser = option.ArgumentParser()
     # parser argument
-    parser.add_argument("-t", "--target", dest="ip")
+    parser.add_argument("-t", "--target", dest="IP")
     (IP) = parser.parse_args()
     return IP
 
@@ -34,6 +36,9 @@ def print_result(result_list):
     return
 
 
-target_ip = get_arguments()
+# main.py -t 192.168.001.002/32
+target_ip = get_arguments().IP
 scan_result = scann_ip(target_ip.IP)
 print_result(scan_result)
+
+
